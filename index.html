@@ -7,29 +7,32 @@
 
 </body>
 <script>
+	'use strict';
+
 	function rel(str) {
 		let newStr = '';
 		let count = 1;
 
-	for (i = 1; i < str.length; i++) {
+		for (i = 1; i < str.length; i++) {
 
-		if (str.charAt(i) == str.charAt(i+1)) {
-			count++;
-        }
+			if (str[i] === str[i + 1]) {
+				count++;
+        	}
 
-		else if (count ===  1) {
-			newStr += str.charAt(i);
+			else if (count ===  1) {
+				newStr += str[i];
+			}
+
+			else {
+				newStr+= str[i] + count;
+				count = 1;
+        	}
 		}
 
-		else {
-			newStr+= str.charAt(i) + count;
-			count = 1;
-        }
+		return newStr;
 	}
 
-return newStr;
-}
-
 console.log(rel('ggglllggueidjjjjff'));
+
 </script>
 </html>
