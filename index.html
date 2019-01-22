@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RLE Compression</title>
+</head>
+<body>
+
+</body>
+<script>
+	'use strict';
+
+	function rel(str) {
+		let newStr = '';
+		let count = 1;
+
+		for (i = 1; i < str.length; i++) {
+
+			if (str[i] === str[i + 1]) {
+				count++;
+        	}
+
+			else if (count ===  1) {
+				newStr += str[i];
+			}
+
+			else {
+				newStr+= str[i] + count;
+				count = 1;
+        	}
+		}
+
+		return newStr;
+	}
+
+console.log(rel('ggglllggueidjjjjff'));
+
+</script>
+</html>
